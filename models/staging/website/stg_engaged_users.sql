@@ -1,2 +1,1 @@
 select * from {{ ref('user_engagement') }}
-
