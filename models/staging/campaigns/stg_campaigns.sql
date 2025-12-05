@@ -8,6 +8,7 @@ final as (
 
     select
 
+        id || '-' || seq as campaign_key,
         id,
         seq,
         name,

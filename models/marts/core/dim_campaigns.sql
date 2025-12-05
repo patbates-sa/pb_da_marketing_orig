@@ -8,6 +8,7 @@ final as (
 
     select
 
+        campaign_key,
         id,
         seq,
         name,

@@ -1,0 +1,34 @@
+version: 2
+
+models:
+
+  - name: stg_campaigns
+    description: Staged campaign data with campaign details and tier information
+    columns:
+      - name: campaign_key
+        description: Surrogate primary key (id + seq)
+        tests:
+          - unique
+          - not_null
+      - name: id
+        description: Campaign identifier
+      - name: seq
+        description: Sequence number for campaign tiers
+      - name: name
+        description: Campaign name
+      - name: tier_name
+        description: Campaign tier classification
+      - name: owner
+        description: Campaign owner
+
+  - name: stg_engaged_users
+    description: Staged user engagement data from website activity
+    columns:
+      - name: user_id
+        description: Primary key - unique user identifier
+        tests:
+          - unique
+          - not_null
+      - name: engagement
+        description: User engagement score
+

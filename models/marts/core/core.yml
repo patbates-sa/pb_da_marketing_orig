@@ -1,0 +1,23 @@
+version: 2
+
+models:
+
+  - name: dim_campaigns
+    description: Campaign dimension table containing campaign attributes and tier details
+    columns:
+      - name: campaign_key
+        description: Surrogate primary key (id + seq)
+        tests:
+          - unique
+          - not_null
+      - name: id
+        description: Campaign identifier
+      - name: seq
+        description: Sequence number for campaign tiers
+      - name: name
+        description: Campaign name
+      - name: tier_name
+        description: Campaign tier classification
+      - name: owner
+        description: Campaign owner
+
