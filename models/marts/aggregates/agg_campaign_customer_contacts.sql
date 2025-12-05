@@ -7,6 +7,7 @@ customer as (select * from {{ ref("data_engineering", "dim_customers",v=1) }}),
 
 final as (
     select
+        campaign.campaign_key || '-' || customer.address as contact_key,
         campaign.name as campaign_name,
         campaign.owner as campaign_owner,
         customer.name as customer_name,
