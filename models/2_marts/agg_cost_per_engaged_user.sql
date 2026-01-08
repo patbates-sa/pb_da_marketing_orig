@@ -22,3 +22,4 @@ select
     total_ad_spend,
     total_ad_spend / nullif(total_engagement, 0) as cost_per_engaged_user
 from cost_per_engaged_user
+
