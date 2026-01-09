@@ -7,3 +7,4 @@ select
     sum(engagement) as total_engagement
 from engaged_users_staging
 group by user_id
+
