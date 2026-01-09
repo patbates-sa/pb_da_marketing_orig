@@ -17,7 +17,7 @@ models:
       - name: total_engagement
         description: Sum of all engagement activity for the user from the intermediate layer
       - name: total_ad_spend
-        description: Total advertising spend for the user from the sales ad_spend_per_adv model
+        description: Total advertising spend for the user from the sales dim_ad_spend_per_adv model
       - name: cost_per_engaged_user
         description: >
           Calculated cost efficiency metric (ad spend / engagement).
