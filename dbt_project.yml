@@ -3,6 +3,7 @@ name: "da_marketing"
 version: "1.0.0"
 dbt-cloud:
   project-id: 70437463662272
+  account-host: "tr995.us1.dbt.com"
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
