@@ -21,3 +21,27 @@ target-path: "target" # directory which will store compiled SQL files
 clean-targets: # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
+
+# dbt-project-evaluator configuration
+vars:
+  dbt_project_evaluator:
+    staging_folder_name: "0_staging"
+    intermediate_folder_name: "1_intermediate"
+    marts_folder_name: "2_marts"
+    # Exclude upstream cross-project models from evaluation
+    exclude_packages:
+      - "data_engineering"
+      - "da_sales"
+    # Add agg_ as accepted prefix for marts models
+    marts_prefixes:
+      - "dim_"
+      - "fct_"
+      - "agg_"
+
+models:
+  dbt_project_evaluator:
+    marts:
+      structure:
+        # Disable test directories check - we use _docs/ folder pattern
+        fct_test_directories:
+          +enabled: false

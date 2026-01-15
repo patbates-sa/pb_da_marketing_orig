@@ -7,17 +7,15 @@ with campaigns as (
 final as (
 
     select
-
-        id || '-' || seq as campaign_key,
         id,
         seq,
         name,
         tier_name,
-        owner
+        "owner",
+        id || '-' || seq as campaign_key
 
     from campaigns
 
 )
 
 select * from final
-
