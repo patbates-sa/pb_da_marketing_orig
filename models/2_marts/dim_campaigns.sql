@@ -12,7 +12,7 @@ final as (
         seq,
         name,
         tier_name,
-        "owner"
+        owner
 
     from campaigns
 
