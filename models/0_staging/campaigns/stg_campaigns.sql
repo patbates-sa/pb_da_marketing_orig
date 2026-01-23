@@ -11,7 +11,7 @@ final as (
         seq,
         name,
         tier_name,
-        "owner",
+        owner,
         id || '-' || seq as campaign_key
 
     from campaigns
