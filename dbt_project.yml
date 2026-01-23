@@ -40,6 +40,7 @@ vars:
 
 models:
   dbt_project_evaluator:
+    +enabled: "{{ env_var('ENABLE_DBT_PROJECT_EVALUATOR', 'true') | lower == 'true' | as_bool }}"
     +docs:
       show: false
     marts:
