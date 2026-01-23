@@ -40,6 +40,8 @@ vars:
 
 models:
   dbt_project_evaluator:
+    +docs:
+      show: false
     marts:
       structure:
         # Disable test directories check - we use _docs/ folder pattern
