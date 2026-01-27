@@ -3,8 +3,6 @@ import json
 import urllib.request
 import urllib.error
 
-# Static for this account / region
-BASE_URL = "https://tr995.us1.dbt.com/api/v2"
 
 def main():
     token = os.environ["DBT_SERVICE_TOKEN"]
@@ -12,8 +10,9 @@ def main():
     job_id = os.environ["DBT_JOB_ID"]
     pr_id = os.environ["PR_ID"]
     git_sha = os.environ["GIT_SHA"]
+    base_url = os.environ.get("DBT_BASE_URL", "https://cloud.getdbt.com/api/v2")
 
-    url = f"{BASE_URL}/accounts/{account_id}/jobs/{job_id}/run/"
+    url = f"{base_url}/accounts/{account_id}/jobs/{job_id}/run/"
 
     payload = json.dumps({
         "cause": "GitHub Actions demo slim CI re-run",
