@@ -22,6 +22,10 @@ on:
     - cron: "0 3 * * *"
   workflow_dispatch:
     inputs:
+      days_old:
+        description: "Delete branches older than this many days (default: 7)"
+        type: number
+        default: 7
       dry_run:
         description: "Dry run (only log, do not delete)"
         type: boolean
@@ -34,5 +38,6 @@ jobs:
       pull-requests: write
     uses: dbt-labs/sa-demo-terraform/.github/workflows/branch-cleanup.yml@main
     with:
-      extra_protected_patterns: 'advanced-ci-demo-pr'
+      days_old: ${{ inputs.days_old }}
+      extra_protected_patterns: "advanced-ci-demo-pr"
       dry_run: ${{ inputs.dry_run || false }}
