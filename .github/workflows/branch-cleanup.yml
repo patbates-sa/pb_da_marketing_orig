@@ -38,6 +38,6 @@ jobs:
       pull-requests: write
     uses: dbt-labs/sa-demo-terraform/.github/workflows/branch-cleanup.yml@main
     with:
-      days_old: ${{ inputs.days_old }}
+      days_old: ${{ github.event.inputs.days_old && fromJSON(github.event.inputs.days_old) || 7 }}
       extra_protected_patterns: "advanced-ci-demo-pr"
       dry_run: ${{ inputs.dry_run || false }}
