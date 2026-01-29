@@ -10,8 +10,8 @@
 #   - main, UAT, develop
 #   - feat/*, fix/*, hotfix/*, release/*
 #
-# To add additional protected patterns for this repo, set extra_protected_patterns.
-# To override the default age threshold, set days_old.
+# To add additional protected patterns for this repo, set extra_protected_patterns
+# in the 'with' block below.
 # =============================================================================
 
 name: Branch Cleanup
@@ -26,10 +26,6 @@ on:
         description: "Dry run (only log, do not delete)"
         type: boolean
         default: false
-      days_old:
-        description: "Delete branches older than this many days"
-        type: number
-        default: 7
 
 jobs:
   cleanup:
@@ -38,5 +34,4 @@ jobs:
       pull-requests: write
     uses: dbt-labs/sa-demo-terraform/.github/workflows/branch-cleanup.yml@main
     with:
-      days_old: ${{ inputs.days_old || 7 }}
       dry_run: ${{ inputs.dry_run || false }}
