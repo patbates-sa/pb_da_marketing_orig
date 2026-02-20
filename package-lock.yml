@@ -2,7 +2,10 @@ packages:
 - package: dbt-labs/dbt_project_evaluator
   name: dbt_project_evaluator
   version: 1.1.2
+- package: get-select/dbt_snowflake_query_tags
+  name: dbt_snowflake_query_tags
+  version: 2.6.0
 - package: dbt-labs/dbt_utils
   name: dbt_utils
   version: 1.3.3
-sha1_hash: 85e64b0e1bf85fa1a73fc2c0bcc887646cf24ddb
+sha1_hash: 0594c341b260b73942e5280579eafd32f43cefbd
