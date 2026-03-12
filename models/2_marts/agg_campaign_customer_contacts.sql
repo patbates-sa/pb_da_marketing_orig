@@ -3,7 +3,7 @@
 with
 campaign as (select * from {{ ref("dim_campaigns") }}),
 
-customer as (select * from {{ ref("data_engineering", "dim_customers",v=1) }}),
+customer as (select * from {{ ref("data_engineering", "dim_customers") }}),
 
 final as (
     select
